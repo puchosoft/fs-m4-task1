@@ -13,12 +13,14 @@ public class Player {
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
     private long id;
+    private String name;
     private String userName;
 
     public Player(){}
 
-    public Player(String email){
-        userName = email;
+    public Player(String name, String email){
+        this.name = name;
+        this.userName = email;
     }
 
     public String getUserName(){
@@ -27,5 +29,13 @@ public class Player {
 
     public void setUserName(String email){
         this.userName = email;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
